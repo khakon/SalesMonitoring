@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Продажи";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .inc {
+        color: #f00;
+    }
+
+        .inc:before {
+            content: '+';
+        }
+
+    /*#gridContainer .dec:before {
+        content: '-';
+    }*/
+
+    .dec {
+        color: #2ab71b;
+    }
+
+    .inc:after {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADKSURBVHjaYtTaLs1ABEiG0nPRJa56PEHhsxBhmCUQT4OyrwHxcXyKmQgYJgHE64CYDYrXQcXIMhCbAcgWkGzgNKh38QUB0QamIUUErkhKI9ZAGyCeTERkTYaqxWsgKA2txhdG6GGsvUNGGpeBRMUiGhCFGsqGzUBQQJsxkA5AemaiG5hDIBIIgQSgK0FmMDACs549kN5FZLjhA7+A2A2U9YSAOBeLAk4gnoBDczoOcSFGPIUDPxB/wCHHiKtwYGKgMhg1cBAaCBBgAJTUIL3ToPZfAAAAAElFTkSuQmCC');
+    }
+
+    .dec:after {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADJSURBVHjaYvzPgBfgkhYA4o8QFahKmBioDEYNHIQGsgBxIBCLkqgvAYi/g1mMjMjir0EJzR6If/6HpChKMMgMe3DKBeIcKhiY8x/MYoDj+RQYNgdkGLqBbEB8kgzDToL1YjEQhKWB+BUJhj0H64Eahs1AELYhMpJ+gtUiGYbLQBBOI8LANLBaIg1kAAc0vkiAqSPBQFAkHcNi2DGoHMkGgrAENOCRI0ECRQ2JBoKwJTQCfkLZDPgMZPxPXN5NhtJzMSsJVBMAAgwAyWSY2svfmrwAAAAASUVORK5CYII=');
+    }
+</style>
+<div id="sale-monitoring">
+    <div data-bind="dxLoadPanel: {closeOnOutsideClick: true, visible: isLoad}"></div>
+    <section class="main">
+        <section class="left-side">
+            <div id="grid" data-bind="dxDataGrid: gridSaleSupersOptions"></div>
+
+        </section>
+        <section class="right-side">
+            <div id="grid" data-bind="dxDataGrid: gridSaleAgentsOptions"></div>
+            <div id="grid" class="prod" data-bind="dxDataGrid: gridProductsOptions"></div>
+        </section>
+        <div class="popup" data-bind="dxPopup: popupSaleOptionsGrid">
+            <div class="info" data-options="dxTemplate: { name:'customers' }">
+                <div class="col-md-6">
+                    <div data-bind="dxDataGrid: gridSaleCustomersOptions"></div>
+                </div>
+                <div class="col-md-6">
+                    <div data-bind="dxDataGrid: gridCustomerProductsOptions"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+

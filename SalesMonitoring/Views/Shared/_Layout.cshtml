@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--<![endif]-->
+    <title>Sales monitoring</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/dx.common.css" rel="stylesheet" />
+    <link href="~/css/dx.light.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+<h3 style="margin-left:20px;margin-right:20px;">Example of sales monitoring for trading company by departments (select department in table), agents (select agent in table), customers (click magnifying glass button in table of agents) and products by hierarchy (click plus button in table of products or select product)</h3>
+    @*<div class="container body-content">*@
+        @RenderBody()
+        <hr />
+        <footer></footer>
+    @*</div>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/knockout/dist/knockout.js"></script>
+    <script src="~/js/globalize.min.js"></script>
+    <script src="~/js/dx.all.js"></script>
+    <script>var Debts = window.Debt || {};</script>
+    <script src="~/js/app/utils.js"></script>
+    <script src="~/js/app/data/db.js"></script>
+    <script src="~/js/app/data/configAPI.js"></script>
+    <script src="~/js/app/data/api.js"></script>
+    <script src="~/js/app/config/sales.js"></script>
+    <script src="~/js/app/view/sales.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
