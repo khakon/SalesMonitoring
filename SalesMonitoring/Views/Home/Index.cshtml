@@ -3,53 +3,84 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-    .inc {
-        color: #f00;
-    }
+	#sale-product {
+		margin: 0;
+		padding: 0;
+		font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Trebuchet MS', Verdana;
+		height: 100%;
+		width: 100%;
+		min-width: 1024px;
+		min-height: 748px;
+		background-color: #efefef;
+	}
 
-        .inc:before {
-            content: '+';
-        }
+	div.grid-container {
+		display: flex;
+		justify-content: space-around;
+	}
 
-    /*#gridContainer .dec:before {
-        content: '-';
-    }*/
+	#sale-product section.grid {
+		color: #848484;
+		font-size: 16px;
+		font-weight: normal;
+		height: 100%;
+		background-color: #fff;
+		border: 1px solid #cfcfcf;
+		border-radius: 1px;
+		box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+		padding: 20px;
+		box-sizing: border-box;
+		flex: 1;
+	}
 
-    .dec {
-        color: #2ab71b;
-    }
+	#sale-product section.grid-2 {
+		flex: 2;
+	}
 
-    .inc:after {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADKSURBVHjaYtTaLs1ABEiG0nPRJa56PEHhsxBhmCUQT4OyrwHxcXyKmQgYJgHE64CYDYrXQcXIMhCbAcgWkGzgNKh38QUB0QamIUUErkhKI9ZAGyCeTERkTYaqxWsgKA2txhdG6GGsvUNGGpeBRMUiGhCFGsqGzUBQQJsxkA5AemaiG5hDIBIIgQSgK0FmMDACs549kN5FZLjhA7+A2A2U9YSAOBeLAk4gnoBDczoOcSFGPIUDPxB/wCHHiKtwYGKgMhg1cBAaCBBgAJTUIL3ToPZfAAAAAElFTkSuQmCC');
-    }
+	.inc {
+		color: #f00;
+	}
 
-    .dec:after {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADJSURBVHjaYvzPgBfgkhYA4o8QFahKmBioDEYNHIQGsgBxIBCLkqgvAYi/g1mMjMjir0EJzR6If/6HpChKMMgMe3DKBeIcKhiY8x/MYoDj+RQYNgdkGLqBbEB8kgzDToL1YjEQhKWB+BUJhj0H64Eahs1AELYhMpJ+gtUiGYbLQBBOI8LANLBaIg1kAAc0vkiAqSPBQFAkHcNi2DGoHMkGgrAENOCRI0ECRQ2JBoKwJTQCfkLZDPgMZPxPXN5NhtJzMSsJVBMAAgwAyWSY2svfmrwAAAAASUVORK5CYII=');
-    }
+	.dec {
+		color: #2ab71b;
+	}
+
+	.inc:after {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADKSURBVHjaYtTaLs1ABEiG0nPRJa56PEHhsxBhmCUQT4OyrwHxcXyKmQgYJgHE64CYDYrXQcXIMhCbAcgWkGzgNKh38QUB0QamIUUErkhKI9ZAGyCeTERkTYaqxWsgKA2txhdG6GGsvUNGGpeBRMUiGhCFGsqGzUBQQJsxkA5AemaiG5hDIBIIgQSgK0FmMDACs549kN5FZLjhA7+A2A2U9YSAOBeLAk4gnoBDczoOcSFGPIUDPxB/wCHHiKtwYGKgMhg1cBAaCBBgAJTUIL3ToPZfAAAAAElFTkSuQmCC');
+	}
+
+	.dec:after {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAADJSURBVHjaYvzPgBfgkhYA4o8QFahKmBioDEYNHIQGsgBxIBCLkqgvAYi/g1mMjMjir0EJzR6If/6HpChKMMgMe3DKBeIcKhiY8x/MYoDj+RQYNgdkGLqBbEB8kgzDToL1YjEQhKWB+BUJhj0H64Eahs1AELYhMpJ+gtUiGYbLQBBOI8LANLBaIg1kAAc0vkiAqSPBQFAkHcNi2DGoHMkGgrAENOCRI0ECRQ2JBoKwJTQCfkLZDPgMZPxPXN5NhtJzMSsJVBMAAgwAyWSY2svfmrwAAAAASUVORK5CYII=');
+	}
+
+	.dx-widget {
+		color: #696969;
+		font-weight: normal;
+		font-size: 12px;
+		font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
+		line-height: 1.35715;
+	}
 </style>
 <div id="sale-monitoring">
-    <div data-bind="dxLoadPanel: {closeOnOutsideClick: true, visible: isLoad}"></div>
-    <section class="main">
-        <section class="left-side">
-            <div id="grid" data-bind="dxDataGrid: gridSaleSupersOptions"></div>
+	<div id="sale-product">
+		<div class="grid-container">
+			<section id="grid" class="grid"><div data-bind="dxDataGrid: gridSaleSupersOptions"></div></section>
+			<section id="grid" class="grid"><div data-bind="dxDataGrid: gridSaleAgentsOptions"></div></section>
+			<section id="grid" class="grid grid-2"><div data-bind="dxDataGrid: gridProductsOptions"></div></section>
+		</div>
+	</div>
+	<div data-bind="dxLoadPanel: {closeOnOutsideClick: true, visible: isLoad}"></div>
+	<div class="popup" data-bind="dxPopup: popupSaleOptionsGrid">
+		<div class="info" data-options="dxTemplate: { name:'customers' }">
+			<div class="col-md-6">
+				<div data-bind="dxDataGrid: gridSaleCustomersOptions"></div>
+			</div>
+			<div class="col-md-6">
+				<div data-bind="dxDataGrid: gridCustomerProductsOptions"></div>
+			</div>
 
-        </section>
-        <section class="right-side">
-            <div id="grid" data-bind="dxDataGrid: gridSaleAgentsOptions"></div>
-            <div id="grid" class="prod" data-bind="dxDataGrid: gridProductsOptions"></div>
-        </section>
-        <div class="popup" data-bind="dxPopup: popupSaleOptionsGrid">
-            <div class="info" data-options="dxTemplate: { name:'customers' }">
-                <div class="col-md-6">
-                    <div data-bind="dxDataGrid: gridSaleCustomersOptions"></div>
-                </div>
-                <div class="col-md-6">
-                    <div data-bind="dxDataGrid: gridCustomerProductsOptions"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+		</div>
+	</div>
 </div>
 
 

@@ -17,6 +17,23 @@
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<span>@Html.ActionLink("Reports", "Index", "Home", null, new { @class = "navbar-brand" })</span><span>Monitoring</span>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="@Url.Action("Index", "Home")">Sales</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 <h3 style="margin-left:20px;margin-right:20px;">Example of sales monitoring for trading company by departments (select department in table), agents (select agent in table), customers (click magnifying glass button in table of agents) and products by hierarchy (click plus button in table of products or select product)</h3>
     @*<div class="container body-content">*@
         @RenderBody()
